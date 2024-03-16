@@ -1,0 +1,43 @@
+import java.util.Arrays;
+
+public class Main{
+    
+    
+public static int[] removeElement(int[] arr, int index){
+    if(arr==null || index<0 || index > arr.length){
+        return arr;
+    }
+    
+    int[] anotherArray = new int[arr.length-1];
+    
+    for(int i=0,k=0; i < arr.length; i++){
+        if(i==index){
+            continue;
+        }
+        anotherArray[k++]=arr[i];
+}
+        return anotherArray;
+}
+    
+    
+    
+    public static void main(String[] args){
+        int[] arr={1,3,5,7,9};
+        System.out.println("Original Array : "+ Arrays.toString(arr));
+        
+        int index = 3;
+        System.out.println("Index to be deleted : " + index );
+        
+        arr=removeElement(arr,index);
+        System.out.println("Result Array : "+ Arrays.toString(arr));
+    }
+}
+
+
+
+
+/*
+Original Array : [1, 3, 5, 7, 9]
+Index to be deleted : 3
+Result Array : [1, 3, 5, 9]
+*/
